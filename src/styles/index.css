@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.menu-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: rgba(30, 30, 30, 0.95);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.menu-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 30px;
+  white-space: nowrap;
+}
+
+.menu-dropdown-wrapper {
+  position: relative;
+}
+
+.menu-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  color: #ccc;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.menu-dropdown-trigger:hover,
+.menu-dropdown-trigger.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.menu-arrow {
+  transition: transform 0.2s;
+}
+
+.menu-arrow.open {
+  transform: rotate(180deg);
+}
+
+.menu-dropdown-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 240px;
+  max-height: 320px;
+  overflow-y: auto;
+  background-color: rgba(40, 40, 40, 0.98);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  padding: 6px;
+  backdrop-filter: blur(8px);
+}
+
+.menu-dropdown-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.menu-dropdown-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.menu-dropdown-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.menu-dropdown-item {
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.menu-dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-dropdown-item.active {
+  background-color: rgba(64, 158, 255, 0.25);
+}
+
+.menu-dropdown-item .item-title {
+  color: #eee;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.menu-dropdown-item.active .item-title {
+  color: #409eff;
+}
+
+.menu-dropdown-item .item-desc {
+  color: #888;
+  font-size: 12px;
+}
+
+.content-container {
+  width: 100%;
+  height: 100%;
+  padding-top: 60px;
+}
