@@ -1,4 +1,4 @@
-import CesiumViewer from "../components/CesiumViewer";
+import CesiumViewer from "../../components/CesiumViewer";
 
 export default function BasicEarth() {
   const setup = (viewer, Cesium) => {

@@ -1,5 +1,4 @@
-import CesiumViewer from "../components/CesiumViewer";
-
+import CesiumViewer from "../../components/CesiumViewer";
 /** 官网例子（航班追踪系统） */
 export default function FlightTracker() {
   const setup = async (viewer, Cesium) => {
